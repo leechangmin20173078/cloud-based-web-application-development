@@ -5,7 +5,7 @@ const assert = require('assert');
 const url = 'mongodb://localhost:27017';
  
 // Database 이름
-const dbName = 'mongoTutorial';
+const dbName = 'myprojectDB';
  
 MongoClient.connect(url, function(err, client) {
   assert.equal(null, err);
