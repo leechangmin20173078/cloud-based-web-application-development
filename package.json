@@ -1,0 +1,19 @@
+{
+  "name": "cloud-based-web-application-development",
+  "version": "1.0.0",
+  "description": "[창원대학교 컴퓨터공학과](http://www.changwon.ac.kr/ce/) [데이터베이스연구실](http://www.changwon.ac.kr/ce/cm/cntnts/cntntsView.do?mi=6606&cntntsId=1924)에서는 다음과 같이 클라우드서비스 기반의 웹 어플리케이션 개발 교육을 실시할 예정이니, 웹 기반의 졸업작품 준비나 웹 어플리케이션/모바일 웹 개발에 관심있는 학생들은 신청바랍니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leechangmin20173078/cloud-based-web-application-development.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leechangmin20173078/cloud-based-web-application-development/issues"
+  },
+  "homepage": "https://github.com/leechangmin20173078/cloud-based-web-application-development#readme"
+}
