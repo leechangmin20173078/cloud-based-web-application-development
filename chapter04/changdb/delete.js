@@ -18,9 +18,9 @@ MongoClient.connect(url, function(err, client) {
 
 const removeDocument = function(db, callback) {
   
-    const collection = db.collection('documents');
+    const collection = db.collection('users');
     
-    collection.deleteOne({ username : "user3" }, function(err, result) {
+    collection.deleteOne({ username : "user2" }, function(err, result) {
       assert.equal(err, null);
      
       console.log("Removed");
