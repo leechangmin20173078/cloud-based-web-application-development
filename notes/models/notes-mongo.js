@@ -2,7 +2,7 @@ const Note = require('./Note');
 const MongoClient = require('mongodb').MongoClient;
 
 const MongoUrl = 'mongodb://127.0.0.1:27017';
-const DataBaseName = 'mongodb-tutorial';
+const DataBaseName = 'mongoTutorial';
 const CollectionName = 'Notes'
 
 var notes = [];
@@ -16,4 +16,46 @@ exports.keylist = async function() {
     let collection = db.collection(CollectionName);
     let result = await collection.find({}).toArray();
     return result;
+  };
+  exports.update = exports.create = async function(key, title, body) {
+  
+    notes[key] = new Note(key, title, body);
+  
+    let noteJSON = notes[key].toJSON();
+  
+    let client = await MongoClient.connect(MongoUrl).
+    catch(err => {
+      console.log(err);
+    });
+  
+    let db = client.db(DataBaseName);
+    let collection = db.collection(CollectionName);
+    let result = await collection.insertOne(noteJSON);
+    return result;
+  };
+  
+  
+  exports.read = async function(key) {
+  
+  
+    let client = await MongoClient.connect(MongoUrl).
+    catch(err => {
+      console.log(err);
+    });
+    let db = client.db(DataBaseName);
+    let collection = db.collection(CollectionName);
+    let result = await collection.findOne({"key": key});
+    console.log(result);
+    return result;
+  
+  };
+  exports.destroy = async function(key) {
+    let client = await MongoClient.connect(MongoUrl).
+    catch(err => {
+      console.log(err);
+    });
+    let db = client.db(DataBaseName);
+    let collection = db.collection(CollectionName);
+    let result = await collection.deleteOne({"key": key});
+    return;
   };
