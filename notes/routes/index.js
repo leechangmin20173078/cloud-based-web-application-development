@@ -39,6 +39,7 @@ router.get('/notes/destroy', async (req, res, next) => {
     notekey: req.query.key, note: note
   });
 });
+
 router.post('/notes/destroy/confirm', async (req, res, next) => {
   await notesMongo.destroy(req.body.notekey);
   res.redirect('/');

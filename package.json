@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/leechangmin20173078/cloud-based-web-application-development/issues"
   },
-  "homepage": "https://github.com/leechangmin20173078/cloud-based-web-application-development#readme"
+  "homepage": "https://github.com/leechangmin20173078/cloud-based-web-application-development#readme",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  }
 }
