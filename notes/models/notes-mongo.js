@@ -2,7 +2,7 @@ const Note = require('./Note');
 const MongoClient = require('mongodb').MongoClient;
 
 const MongoUrl = 'mongodb://127.0.0.1:27017';
-const DataBaseName = 'mongoTutorial';
+const DataBaseName = 'mongodb-tutorial';
 const CollectionName = 'Notes'
 
 var notes = [];
