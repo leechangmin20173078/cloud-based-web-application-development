@@ -13,6 +13,7 @@ module.exports = class Note {
   set title(newTitle) { this[_note_title] = newTitle; }
   get body() { return this[_note_body]; }
   set body(newBody) { this[_note_body] = newBody; }
+  
   toJSON() {
     return {
       key: this[_note_key],

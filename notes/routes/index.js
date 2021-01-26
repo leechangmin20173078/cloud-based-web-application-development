@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const notes = require('../models/notes-memory');
 const notesMongo = require('../models/notes-mongo');
 
 /* GET home page. */
@@ -11,6 +12,13 @@ router.get('/', async (req, res, next) => {
   res.render('index', { title: 'Notes', notelist: keylist });
 });
 
+router.get('/notes/add', (req, res, next) => {
+    res.render('noteedit', {
+        title: "Add a Note",
+        docreate: true,
+        notekey: "", note: undefined
+    });
+});
 router.post('/notes/save', async (req, res, next) => {
   var note;
   console.log(req.body);
