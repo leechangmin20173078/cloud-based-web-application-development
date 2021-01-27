@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route , Link, Switch } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
 import Profiles from './Profiles';
 import HistorySample from './HistorySample';
+import axios from 'axios';
+import AirPage from './components/AirPage';
 
 const App = () => {
+
+
+    const [data, setData] = useState(null);
+
+    const onClick = async () => {
+        try {
+            const response = await axios.get(
+                'http://54.188.226.143:3001/api?sidoName=경남',
+            );
+            setData(response.data);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+
     return (
         <div>
             <ul>
@@ -21,6 +39,9 @@ const App = () => {
                 <li>
                     <Link to='/history'>History 예제</Link>
                 </li>
+                <li>
+                    <Link to='/api'>Api 예제</Link>
+                </li>
             </ul>
             <hr/>
             <Switch>
@@ -28,6 +49,7 @@ const App = () => {
             <Route path={["/about", "/info"]} component={About} />
             <Route path="/profiles" component={Profiles} />
             <Route path="/history" component={HistorySample} />
+            <Route path="/api/:category?" component={AirPage} />
                 <Route
                     // path를 따로 정의하지 않으면 모든 상황에 렌더링됨
                     render={({ location }) => (
@@ -38,9 +60,17 @@ const App = () => {
                     )}
                 />
             </Switch>
+
+            <div>
+                <div>
+                    <button onClick={onClick}>불러오기</button>
+                </div>
+                {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true} />}
+            </div>
+
+
         </div>
 );
 };
-
 
 export default App;

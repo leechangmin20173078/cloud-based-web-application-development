@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/leechangmin20173078/cloud-based-web-application-development#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mongodb": "^3.6.3"
   }
 }
