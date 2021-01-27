@@ -15,7 +15,7 @@ const App = () => {
     const onClick = async () => {
         try {
             const response = await axios.get(
-                'http://54.188.226.143:3001/api?sidoName=경남',
+                'http://localhost:3001/api?sidoName=경남',
             );
             setData(response.data);
         } catch (e) {

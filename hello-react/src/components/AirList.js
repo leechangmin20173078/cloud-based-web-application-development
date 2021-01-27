@@ -29,7 +29,7 @@ const AirList = ({category}) => {
                 setLoading(true);
                 try {
                     const response = await axios.get(
-                    `http://3.35.219.122:3000/api?sidoName=${category}`,
+                    `http://localhost:3001/api?sidoName=${category}`,
                         );
                     setArticles(response.data.response.body.items);
                     //console.log(response.data.response.body.items)
